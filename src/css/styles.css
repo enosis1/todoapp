@@ -50,21 +50,26 @@ body {
 #content {
   grid-area: task;
   background-color: var(--secondary-color);
-  padding: 10px 20px
+  padding: 10px 20px;
 }
 
 .tasks-container {
   display: grid;
   width: 100%;
+  border: 0px white solid;
+  border-radius: 10px;
+  background-color: var(--accent-color);
+  row-gap: 5px;
 }
 
 .task {
-  background-color: var(--accent-color);
   display: flex;
   flex: 1 1 auto;
   gap: 15px;
+
   font-size: 1.4rem;
   color: white;
+  padding-left: 10px;
 }
 
 .footer {
