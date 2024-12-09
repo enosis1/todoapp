@@ -1,22 +1,64 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Todo App</title>
-  </head>
 
-  <body>
-    <div id="content">
-      <div class="header">
-        <h1>header</h1>
-      </div>
-      <div class="body">
-        <h1>body</h1>
-      </div>
-      <div class="footer">
-        <h1>footer</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Todo App</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <p>Todo App</p>
+    </div>
+
+    <div id="sidebar">
+      <div class="projects-container">
+        <p class="project-name">Home</p>
+        <p class="project-name">Today</p>
+        <div class="projects">
+          <p class="project-name">Projects</p>
+          <p class="project-name">Project Name</p>
+        </div>
       </div>
     </div>
-  </body>
+
+    <div id="content">
+      <p>Selected Project Name</p>
+      <div class="tasks-container">
+        <div class="task">
+          <p class="task-name">Example Task</p>
+          <p class="task-due-date">Example Due Date</p>
+          <div class="task-checkbox">
+            <label for="isComplete"></label>
+            <input type="checkbox" name="isComplete" value="isComplete" />
+          </div>
+        </div>
+        <div class="task">
+          <p class="task-name">Example Task</p>
+          <p class="task-due-date">Example Due Date</p>
+          <div class="task-checkbox">
+            <label for="isComplete"></label>
+            <input type="checkbox" name="isComplete" value="isComplete" />
+          </div>
+        </div>
+        <div class="task">
+          <p class="task-name">Example Task</p>
+          <p class="task-due-date">Example Due Date</p>
+          <div class="task-checkbox">
+            <label for="isComplete"></label>
+            <input type="checkbox" name="isComplete" value="isComplete" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="footer">
+    <p>Copyright © 2021 enosis1</p>
+  </div>
+  </div>
+</body>
+
 </html>
