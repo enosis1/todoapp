@@ -1,0 +1,75 @@
+:root {
+  --main-color: #e2e8f0;
+  --secondary-color: #f1f5f9;
+  --accent-color: #ef4444;
+  --header-font-size: 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: var(--main-color);
+}
+
+.container {
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 10fr 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar task"
+    "footer footer";
+}
+
+.header {
+  grid-area: header;
+  background-color: var(--accent-color);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: var(--header-font-size);
+  padding-left: 10px;
+  color: white;
+}
+
+#sidebar {
+  grid-area: sidebar;
+  background-color: var(--main-color);
+  font-size: 1.5rem;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+#content {
+  grid-area: task;
+  background-color: var(--secondary-color);
+  padding: 10px 20px
+}
+
+.tasks-container {
+  display: grid;
+  width: 100%;
+}
+
+.task {
+  background-color: var(--accent-color);
+  display: flex;
+  flex: 1 1 auto;
+  gap: 15px;
+  font-size: 1.4rem;
+  color: white;
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
