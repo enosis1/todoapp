@@ -1,6 +1,9 @@
 export default function clearModal() {
-  const modal = document.querySelector(".modal");
-  const input = document.querySelector(".modal-input")
+  const input = document.querySelector(".text-input");
+  const date = document.querySelector(".date-input");
+  const prio = document.querySelector(".prio-input");
 
-  input.textContent = ""
+  input.value = ''
+  date.value = ''
+  prio.value = 'One'
 }

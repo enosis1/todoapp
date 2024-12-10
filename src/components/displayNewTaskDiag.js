@@ -23,8 +23,8 @@ export default function displayNewTaskDiag() {
   textLabel.classList.add("label", "text-label");
   prioLabel.classList.add("label", "prio-label");
   dateLabel.classList.add("label", "date-label");
-  textInput.classList.add("modal-input");
-  dateInput.classList.add("dialog-input");
+  textInput.classList.add("text-input");
+  dateInput.classList.add("date-input");
   prioSelect.classList.add("prio-input");
   textContainer.classList.add("dialog-text-container");
   dateContainer.classList.add("dialog-date-container");
