@@ -6,9 +6,8 @@ export default class Task {
     this.priority = priority;
   }
 
-
-  // This expects an object when updating
   updateTask(properties) {
+    // This method is expecting an object when updating
     for (let key in properties) {
       if (this.hasOwnProperty(key)) {
         this[key] = properties[key];
