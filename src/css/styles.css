@@ -51,6 +51,21 @@ body {
   grid-area: task;
   background-color: var(--secondary-color);
   padding: 10px 20px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+button {
+  font-size: 1.5rem;
+  background-color: var(--accent-color);
+  padding: 10px;
+  color: white;
+  border: 0px solid white;
+  border-radius: 10px;
+
+  align-self: flex-start;
 }
 
 .tasks-container {
