@@ -1,4 +1,4 @@
-export default function displayNewTaskDiag() {
+export default function displayNewTaskModal() {
   const body = document.querySelector("body");
   const dialogWindow = document.createElement("dialog");
 
@@ -41,13 +41,17 @@ export default function displayNewTaskDiag() {
   textInput.placeholder = "What's your new task?";
   addTaskBtn.textContent = "Create Task";
   cancelBtn.textContent = "Cancel";
+  addTaskBtn.type = "submit";
 
   textLabel.htmlFor = "task";
   textInput.id = "task";
+  textInput.required = true;
   dateLabel.htmlFor = "date";
   dateInput.id = "date";
+  dateInput.required = true;
   prioLabel.htmlFor = "priority";
   prioSelect.id = "priority";
+  prioSelect.required = true;
 
   // Prio Options
   const priorityOne = document.createElement("option");
@@ -76,7 +80,7 @@ export default function displayNewTaskDiag() {
   formContainer.appendChild(textContainer);
   formContainer.appendChild(dateContainer);
   formContainer.appendChild(prioContainer);
-  dialogWindow.appendChild(buttonContainer);
+  formContainer.appendChild(buttonContainer);
 
   body.append(dialogWindow);
 }
