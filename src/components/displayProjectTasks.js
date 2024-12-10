@@ -13,7 +13,7 @@ export default function displayProjectTasks(project) {
   // Add classes
   projectName.classList.add("project-name");
   tasksContainer.classList.add("tasks-container");
-  addTaskButton.classList.add("button");
+  addTaskButton.classList.add("button", "add-task");
 
   project.tasks.forEach((task) => {
     const taskContainer = document.createElement("div");
