@@ -8,9 +8,9 @@ import displayProjects from "./components/displayProjects";
 import displayProjectModal from "./components/displayProjectModal";
 import clearTaskModal from "./components/clearModal";
 import clearProjectModal from "./components/clearProjectModal";
-import handleProjectEventListeners from "./components/handleProjectEventListeners";
+import { handleEventListeners } from "./components/handleEventListeners";
 
-let projects = [new Project("Bug Fixes"), new Project("Todo App")];
+export let projects = [new Project("Bug Fixes"), new Project("Todo App")];
 const task = new Task("Finish Dom", "Test Desc", new Date("2024-12-31"), 3);
 const bugTask = new Task("Fix bugs", "", new Date(), 3);
 projects[1].insertTask(task);
@@ -84,26 +84,5 @@ cancelTaskBtn.addEventListener("click", () => {
   taskModal.close();
   clearTaskModal();
 });
-
-function handleEventListeners() {
-  const projectsSidebar = document.querySelector("#sidebar > div > div");
-
-  // Use a single event listener on the parent container
-  projectsSidebar.addEventListener("click", (event) => {
-    // Check if the clicked element has the 'created-projects' class
-    if (event.target.classList.contains("created-projects")) {
-      const currentProject = event.target.textContent.trim();
-      console.log(currentProject);
-
-      const currentLocation = projects.findIndex(
-        (project) => project.title === currentProject,
-      );
-
-      console.log(currentLocation);
-      clearPage();
-      displayProjectTasks(projects[currentLocation]);
-    }
-  });
-}
 
 handleEventListeners();
