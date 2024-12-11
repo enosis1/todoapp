@@ -8,7 +8,7 @@ export default function displayProjects(projects) {
 
   projects.forEach((project) => {
     const projectTitle = document.createElement("button");
-    projectTitle.classList.add("project-name");
+    projectTitle.classList.add("project-name", "created-projects");
     projectTitle.textContent = `${project.title}`;
     projectsContainer.appendChild(projectTitle);
   });
