@@ -18,12 +18,12 @@ export default function displayNewTaskModal() {
   const cancelBtn = document.createElement("button");
 
   //Classes
-  dialogWindow.classList.add("modal");
+  dialogWindow.classList.add("task-modal");
   formContainer.classList.add("dialog-form");
   textLabel.classList.add("label", "text-label");
   prioLabel.classList.add("label", "prio-label");
   dateLabel.classList.add("label", "date-label");
-  textInput.classList.add("text-input");
+  textInput.classList.add("task-text-input");
   dateInput.classList.add("date-input");
   prioSelect.classList.add("prio-input");
   textContainer.classList.add("dialog-text-container");

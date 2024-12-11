@@ -1,4 +1,5 @@
 export default function clearPage() {
-  const content = document.querySelector("#content");
-  content.replaceChildren()
+  const currentProject = document.querySelector(".current-project");
+  currentProject.replaceChildren();
+  currentProject.remove()
 }

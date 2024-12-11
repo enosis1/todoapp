@@ -4,16 +4,15 @@ export default function displayProjectTasks(project) {
   // Create DOM elements
   const projectName = document.createElement("p");
   const tasksContainer = document.createElement("div");
-  const addTaskButton = document.createElement("button");
+  const currentProjectContainer = document.createElement("div");
 
   projectName.textContent = project.title;
-  addTaskButton.textContent = "+Task";
   content.appendChild(projectName);
 
   // Add classes
   projectName.classList.add("project-name");
+  currentProjectContainer.classList.add("current-project");
   tasksContainer.classList.add("tasks-container");
-  addTaskButton.classList.add("button", "add-task");
 
   project.tasks.forEach((task) => {
     const taskContainer = document.createElement("div");
@@ -51,9 +50,18 @@ export default function displayProjectTasks(project) {
 
     taskContainer.appendChild(taskCheckboxContainer);
     taskContainer.appendChild(taskDueDateContainer);
-    content.appendChild(tasksContainer);
+    currentProjectContainer.appendChild(projectName);
+    currentProjectContainer.appendChild(tasksContainer);
     tasksContainer.appendChild(taskContainer);
+    content.appendChild(currentProjectContainer);
   });
 
+  let addTaskButton = content.querySelector(".add-task");
+  if (!addTaskButton) {
+    addTaskButton = document.createElement("button");
+    addTaskButton.textContent = "New Task";
+    addTaskButton.classList.add("button", "add-task");
+    content.appendChild(addTaskButton);
+  }
   content.appendChild(addTaskButton);
 }
