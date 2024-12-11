@@ -10,7 +10,7 @@ export default function displayProjectTasks(project) {
   content.appendChild(projectName);
 
   // Add classes
-  projectName.classList.add("project-name");
+  projectName.classList.add("current-project-name", "project-name");
   currentProjectContainer.classList.add("current-project");
   tasksContainer.classList.add("tasks-container");
 
