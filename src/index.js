@@ -1,15 +1,15 @@
-import Task from "./components/task";
-import Project from "./components/project";
-import displayProjectTasks from "./components/displayProjectTasks";
-import displayNewTaskModal from "./components/displayNewTaskModal";
-import clearPage from "./components/clearPage";
+import Task from "./modules/task";
+import Project from "./modules/project";
+import displayProjectTasks from "./modules/displayProjectTasks";
+import displayNewTaskModal from "./modules/displayNewTaskModal";
+import clearPage from "./modules/clearPage";
 import "./css/styles.css";
-import displayProjects from "./components/displayProjects";
-import displayProjectModal from "./components/displayProjectModal";
-import clearTaskModal from "./components/clearModal";
-import clearProjectModal from "./components/clearProjectModal";
-import { handleEventListeners } from "./components/handleEventListeners";
-import { projects } from "./components/projectsArray";
+import displayProjects from "./modules/displayProjects";
+import displayProjectModal from "./modules/displayProjectModal";
+import clearTaskModal from "./modules/clearModal";
+import clearProjectModal from "./modules/clearProjectModal";
+import { handleEventListeners } from "./modules/handleEventListeners";
+import { projects } from "./modules/projectsArray";
 
 const task = new Task("Finish Dom", "Test Desc", new Date("2024-12-31"), 3);
 const bugTask = new Task("Fix bugs", "", new Date(), 3);

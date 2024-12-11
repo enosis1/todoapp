@@ -45,11 +45,28 @@ export default function displayProjectTasks(project) {
     dueDateLabel.textContent = "Due: ";
     dueDateLabel.htmlFor = `${task.title}date`;
 
+    // Edit and Delete container elements
+    const editAndDeleteContainer = document.createElement("div");
+    editAndDeleteContainer.classList.add("edit-and-delete");
+
+    const editButton = document.createElement("button");
+    editButton.classList.add("button", "edit-button");
+    editButton.textContent = "Edit";
+    editButton.type = "button";
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("button", "delete-button");
+    deleteButton.textContent = "Delete";
+    deleteButton.type = "button";
+
+    editAndDeleteContainer.appendChild(editButton);
+    editAndDeleteContainer.appendChild(deleteButton);
+
     taskDueDateContainer.appendChild(dueDateLabel);
     taskDueDateContainer.appendChild(dueDateInput);
 
     taskContainer.appendChild(taskCheckboxContainer);
     taskContainer.appendChild(taskDueDateContainer);
+    taskContainer.appendChild(editAndDeleteContainer);
     tasksContainer.appendChild(taskContainer);
   });
   currentProjectContainer.appendChild(projectName);
