@@ -9,8 +9,8 @@ import displayProjectModal from "./components/displayProjectModal";
 import clearTaskModal from "./components/clearModal";
 import clearProjectModal from "./components/clearProjectModal";
 import { handleEventListeners } from "./components/handleEventListeners";
+import { projects } from "./components/projectsArray";
 
-export let projects = [new Project("Bug Fixes"), new Project("Todo App")];
 const task = new Task("Finish Dom", "Test Desc", new Date("2024-12-31"), 3);
 const bugTask = new Task("Fix bugs", "", new Date(), 3);
 projects[1].insertTask(task);

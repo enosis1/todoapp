@@ -1,4 +1,4 @@
-import { projects } from "../index.js";
+import { projects } from "./projectsArray.js";
 import clearPage from "./clearPage.js";
 import displayProjectTasks from "./displayProjectTasks.js";
 
