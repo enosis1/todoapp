@@ -45,6 +45,24 @@ body {
   font-size: 1.2rem;
   padding-left: 10px;
   padding-top: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebar button.project-name {
+  display: block;
+  color: black;
+  background-color: var(--main-color);
+}
+
+#sidebar>div>button:nth-child(2) {
+  padding-bottom: 20px;
+}
+
+p.project-name {
+  font-size: 1.5rem;
+  padding-bottom: 10px;
 }
 
 #content {
@@ -103,7 +121,7 @@ button:active {
   justify-content: center;
 }
 
-.modal[open] {
+dialog[open] {
   margin: auto;
   display: flex;
   gap: 10px;
@@ -128,9 +146,12 @@ button:active {
 }
 
 .dialog-btns {
+  align-self: center;
   display: flex;
   gap: 10px;
+  margin-top: 10px;
 }
+
 
 .dialog-btns button {
   width: 150px;
