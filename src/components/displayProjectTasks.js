@@ -50,11 +50,11 @@ export default function displayProjectTasks(project) {
 
     taskContainer.appendChild(taskCheckboxContainer);
     taskContainer.appendChild(taskDueDateContainer);
-    currentProjectContainer.appendChild(projectName);
-    currentProjectContainer.appendChild(tasksContainer);
     tasksContainer.appendChild(taskContainer);
-    content.appendChild(currentProjectContainer);
   });
+  currentProjectContainer.appendChild(projectName);
+  currentProjectContainer.appendChild(tasksContainer);
+  content.appendChild(currentProjectContainer);
 
   let addTaskButton = content.querySelector(".add-task");
   if (!addTaskButton) {
