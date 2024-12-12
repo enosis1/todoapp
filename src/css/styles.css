@@ -68,12 +68,12 @@ p.project-name {
 #content {
   grid-area: task;
   background-color: var(--secondary-color);
-  padding: 10px 20px;
 
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
   gap: 5px;
+  padding: 20px 100px;
 }
 
 #content>.project-name {
@@ -152,7 +152,6 @@ dialog[open] {
   margin-top: 10px;
 }
 
-
 .dialog-btns button {
   width: 150px;
   height: 40px;
@@ -169,4 +168,19 @@ dialog label {
   width: 50px;
   align-self: center;
   margin-right: 10px;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  height: auto;
+  width: 15px;
+  filter: invert(100%) sepia(0%) saturate(7473%) hue-rotate(27deg) brightness(101%) contrast(106%);
+}
+
+.delete-button {
+  margin-left: auto;
+  padding-right: 0px;
 }

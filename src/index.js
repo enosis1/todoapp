@@ -10,9 +10,9 @@ import clearTaskModal from "./modules/clearModal";
 import clearProjectModal from "./modules/clearProjectModal";
 import { handleEventListeners } from "./modules/handleEventListeners";
 import { projects } from "./modules/projectsArray";
+import { deleteTaskfromDOM } from "./modules/deleteTaskfromDOM";
 
 const task = new Task("Finish Dom", "Test Desc", new Date("2024-12-31"), 3);
-const bugTask = new Task("Fix bugs", "", new Date(), 3);
 projects[1].insertTask(task);
 
 displayProjects(projects);
@@ -84,5 +84,7 @@ cancelTaskBtn.addEventListener("click", () => {
   taskModal.close();
   clearTaskModal();
 });
+
+deleteTaskfromDOM();
 
 handleEventListeners();

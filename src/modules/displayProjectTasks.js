@@ -1,3 +1,6 @@
+import pencil from "../images/pencil.svg";
+import cross from "../images/cross.svg";
+
 export default function displayProjectTasks(project) {
   const content = document.querySelector("#content");
 
@@ -19,54 +22,34 @@ export default function displayProjectTasks(project) {
     taskContainer.classList.add("task");
 
     // Checkbox Container Elements
-    const taskCheckboxContainer = document.createElement("div");
-    taskCheckboxContainer.classList.add("task-checkbox");
-    const checkbox = document.createElement("input");
-    checkbox.type = "checkbox";
-    checkbox.name = "isComplete";
-    checkbox.value = "isComplete";
-    checkbox.id = `${task.title}`;
-
-    const checkboxLabel = document.createElement("label");
-    checkboxLabel.htmlFor = `${task.title}`;
-    checkboxLabel.textContent = `${task.title}`;
-
-    taskCheckboxContainer.appendChild(checkbox);
-    taskCheckboxContainer.appendChild(checkboxLabel);
+    const taskName = document.createElement("p");
+    taskName.classList.toggle("task-name");
+    taskName.textContent = `${task.title}`;
 
     // DueDate container elements
-    const taskDueDateContainer = document.createElement("div");
-    taskDueDateContainer.classList.add("task-due-date");
-    const dueDateInput = document.createElement("input");
-    dueDateInput.type = "date";
-    dueDateInput.value = task.dueDate;
+    const taskDueDateInput = document.createElement("input");
+    taskDueDateInput.type = "date";
+    taskDueDateInput.value = task.dueDate;
 
-    const dueDateLabel = document.createElement("label");
-    dueDateLabel.textContent = "Due: ";
-    dueDateLabel.htmlFor = `${task.title}date`;
+    const taskDueDateLabel = document.createElement("label");
+    taskDueDateLabel.textContent = "By: ";
+    taskDueDateLabel.htmlFor = `${task.title}-date`;
 
     // Edit and Delete container elements
-    const editAndDeleteContainer = document.createElement("div");
-    editAndDeleteContainer.classList.add("edit-and-delete");
 
-    const editButton = document.createElement("button");
-    editButton.classList.add("button", "edit-button");
-    editButton.textContent = "Edit";
-    editButton.type = "button";
+    const deleteButtonImg = document.createElement("img");
+    deleteButtonImg.src = cross;
+
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("button", "delete-button");
-    deleteButton.textContent = "Delete";
     deleteButton.type = "button";
 
-    editAndDeleteContainer.appendChild(editButton);
-    editAndDeleteContainer.appendChild(deleteButton);
+    deleteButton.appendChild(deleteButtonImg);
 
-    taskDueDateContainer.appendChild(dueDateLabel);
-    taskDueDateContainer.appendChild(dueDateInput);
-
-    taskContainer.appendChild(taskCheckboxContainer);
-    taskContainer.appendChild(taskDueDateContainer);
-    taskContainer.appendChild(editAndDeleteContainer);
+    taskContainer.appendChild(taskName);
+    taskContainer.appendChild(taskDueDateLabel);
+    taskContainer.appendChild(taskDueDateInput);
+    taskContainer.appendChild(deleteButton);
     tasksContainer.appendChild(taskContainer);
   });
   currentProjectContainer.appendChild(projectName);
