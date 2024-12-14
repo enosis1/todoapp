@@ -30,6 +30,6 @@ export default function displayProjectModal(project) {
   buttonContainer.appendChild(cancelBtn);
   formContainer.appendChild(textContainer);
   formContainer.appendChild(buttonContainer);
-  dialogWindow.appendChild(formContainer)
+  dialogWindow.appendChild(formContainer);
   body.appendChild(dialogWindow);
 }

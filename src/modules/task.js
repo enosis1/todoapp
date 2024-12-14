@@ -9,7 +9,7 @@ export default class Task {
   updateTask(properties) {
     // This method is expecting an object when updating
     for (let key in properties) {
-      if (this.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(this, key)) {
         this[key] = properties[key];
       }
     }

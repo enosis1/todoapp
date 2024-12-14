@@ -1,6 +1,6 @@
-import { projects } from "./projectsArray";
+import { projectsArray } from "./projectsArray";
 
-export function deleteTaskfromDOM() {
+export default function deleteTaskfromDOM() {
   const content = document.querySelector("#content");
   content.addEventListener("click", (event) => {
     if (event.target.parentNode.parentNode.classList.value == "task") {
@@ -13,15 +13,15 @@ export function deleteTaskfromDOM() {
       const currentTaskName =
         currentTask.querySelector(".task-name").textContent;
 
-      const currentProjectIndex = projects.findIndex(
+      const currentProjectIndex = projectsArray.findIndex(
         (project) => project.title === projectName,
       );
 
-      const foundTask = projects[currentProjectIndex].tasks.find(
+      const foundTask = projectsArray[currentProjectIndex].tasks.find(
         (task) => task.title === currentTaskName,
       );
-      projects[currentProjectIndex].deleteTask(foundTask);
-      console.log(projects);
+      projectsArray[currentProjectIndex].deleteTask(foundTask);
+      console.log(projectsArray);
       currentTask.remove();
     }
   });

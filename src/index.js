@@ -1,22 +1,19 @@
-import Task from "./modules/task";
-import Project from "./modules/project";
-import displayProjectTasks from "./modules/displayProjectTasks";
+import Task from "./modules/Task";
+import Project from "./modules/Project";
+import { displayProjectTasks, displayAllTasks } from "./modules/displayTasks";
+import { projectsArray } from "./modules/projectsArray";
 import displayNewTaskModal from "./modules/displayNewTaskModal";
 import clearPage from "./modules/clearPage";
-import "./css/styles.css";
 import displayProjects from "./modules/displayProjects";
 import displayProjectModal from "./modules/displayProjectModal";
-import clearTaskModal from "./modules/clearModal";
+import clearTaskModal from "./modules/clearTaskModal";
 import clearProjectModal from "./modules/clearProjectModal";
-import { handleEventListeners } from "./modules/handleEventListeners";
-import { projects } from "./modules/projectsArray";
-import { deleteTaskfromDOM } from "./modules/deleteTaskfromDOM";
+import handleEventListeners from "./modules/handleEventListeners";
+import deleteTaskfromDOM from "./modules/deleteTaskfromDOM";
+import "./css/styles.css";
 
-const task = new Task("Finish Dom", "Test Desc", new Date("2024-12-31"), 3);
-projects[1].insertTask(task);
-
-displayProjects(projects);
-displayProjectTasks(projects[1]);
+displayProjects(projectsArray);
+displayProjectTasks(projectsArray[1]);
 displayNewTaskModal();
 displayProjectModal();
 
@@ -39,10 +36,10 @@ createProjectBtn.addEventListener("click", (event) => {
   const projectTitle = document.querySelector(".project-text-input").value;
   const newProject = new Project(projectTitle);
 
-  projects.push(newProject);
+  projectsArray.push(newProject);
   const projectsSidebar = document.querySelector("#sidebar > div > div");
   projectsSidebar.replaceChildren();
-  displayProjects(projects);
+  displayProjects(projectsArray);
   clearPage();
   displayProjectTasks(newProject);
   projectModal.close();
@@ -63,7 +60,7 @@ createTaskBtn.addEventListener("click", (event) => {
     ".current-project-name",
   ).textContent;
 
-  const currentLocation = projects.findIndex(
+  const currentLocation = projectsArray.findIndex(
     (project) => project.title === currentProject,
   );
 
@@ -72,12 +69,12 @@ createTaskBtn.addEventListener("click", (event) => {
   const taskPriority = document.querySelector(".prio-input").value;
 
   const task = new Task(taskTitle, "", taskDate, taskPriority);
-  projects[currentLocation].insertTask(task);
+  projectsArray[currentLocation].insertTask(task);
   clearPage();
-  displayProjectTasks(projects[currentLocation]);
+  displayProjectTasks(projectsArray[currentLocation]);
   handleEventListeners();
   taskModal.close();
-  console.log(projects);
+  console.log(projectsArray);
 });
 
 cancelTaskBtn.addEventListener("click", () => {
@@ -86,5 +83,10 @@ cancelTaskBtn.addEventListener("click", () => {
 });
 
 deleteTaskfromDOM();
-
 handleEventListeners();
+
+const homeButton = document.querySelector(".home-button");
+homeButton.addEventListener("click", () => {
+  clearPage();
+  displayAllTasks();
+});

@@ -1,8 +1,8 @@
-import { projects } from "./projectsArray.js";
+import { projectsArray } from "./projectsArray.js";
 import clearPage from "./clearPage.js";
-import displayProjectTasks from "./displayProjectTasks.js";
+import { displayProjectTasks } from "./displayTasks.js";
 
-export function handleEventListeners() {
+export default function handleEventListeners() {
   const projectsSidebar = document.querySelector("#sidebar > div > div");
 
   // Use a single event listener on the parent container
@@ -12,13 +12,13 @@ export function handleEventListeners() {
       const currentProject = event.target.textContent.trim();
       console.log(currentProject);
 
-      const currentLocation = projects.findIndex(
+      const currentLocation = projectsArray.findIndex(
         (project) => project.title === currentProject,
       );
 
       console.log(currentLocation);
       clearPage();
-      displayProjectTasks(projects[currentLocation]);
+      displayProjectTasks(projectsArray[currentLocation]);
     }
   });
 }
