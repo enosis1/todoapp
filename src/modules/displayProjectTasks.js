@@ -1,9 +1,14 @@
 export default function displayProjectTasks(project) {
-  const currentProjectContainer = document.querySelector(
-    ".current-project-container",
-  );
-  const currentProjectTitle = document.querySelector(".current-project-title");
-  const currentProjectTasks = document.querySelector(".current-project-tasks");
+  const main = document.querySelector(".main");
+  const currentProjectContainer = document.createElement("div");
+  currentProjectContainer.classList.toggle("current-project-container");
+  const currentProjectTitle = document.createElement("p");
+  currentProjectTitle.classList.toggle("current-project-title");
+  const currentProjectTasks = document.createElement("div");
+  currentProjectTasks.classList.toggle("current-project-tasks");
+  main.appendChild(currentProjectContainer);
+  main.appendChild(currentProjectTasks);
+
   currentProjectTitle.textContent = project.title;
   currentProjectContainer.appendChild(currentProjectTitle);
   project.tasks.forEach((task) => {

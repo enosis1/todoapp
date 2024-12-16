@@ -2,10 +2,17 @@ import { format } from "date-fns";
 
 export default function displayTodayTasks(projects) {
   const today = format(new Date(), "yyyy-MM-dd");
-  const currentProjectTitle = document.querySelector(".current-project-title");
+  const main = document.querySelector(".main");
+  const currentProjectContainer = document.createElement("div");
+  currentProjectContainer.classList.toggle("current-project-container");
+  const currentProjectTitle = document.createElement("p");
+  currentProjectTitle.classList.toggle("current-project-title");
   currentProjectTitle.textContent = "Today's Tasks";
-  const currentProjectTasks = document.querySelector(".current-project-tasks");
-
+  const currentProjectTasks = document.createElement("div");
+  currentProjectTasks.classList.toggle("current-project-tasks");
+  currentProjectContainer.appendChild(currentProjectTitle);
+  main.appendChild(currentProjectContainer);
+  main.appendChild(currentProjectTasks);
   projects.forEach((project) => {
     const todaysTasks = project.tasks.filter((task) => task.dueDate == today);
     todaysTasks.forEach((task) => {

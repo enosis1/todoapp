@@ -12,9 +12,6 @@ import clearMainDOM from "./modules/clearMainDOM";
 // Generates the Main Content DOM nodes.
 displayMainContent();
 
-// Displays the Test Projects which is at position 0 in the projects array
-//displayProjectTasks(projects[0]);
-
 // Displays all the project's tasks
 const allTasksBtn = document.querySelector(".all-tasks-button");
 allTasksBtn.addEventListener("click", () => {
@@ -22,8 +19,25 @@ allTasksBtn.addEventListener("click", () => {
   displayAllTasks(projects);
 });
 
-// Displays all the user created project titles
-//displayAllProjectTitles(projects);
-
 // Displays all the tasks with todays date
-//displayTodayTasks(projects)
+const todaysTasksBtn = document.querySelector(".today-task-button");
+todaysTasksBtn.addEventListener("click", () => {
+  clearMainDOM();
+  displayTodayTasks(projects);
+});
+
+// Displays all the user created project titles
+displayAllProjectTitles(projects);
+
+const userProjectBtns = document.querySelectorAll(".user-created");
+userProjectBtns.forEach((button) => {
+  button.addEventListener("click", () => {
+    const thisProjectIndex = projects.findIndex(
+      (project) => project.title === button.textContent,
+    );
+    console.log(thisProjectIndex);
+
+    clearMainDOM();
+    displayProjectTasks(projects[thisProjectIndex]);
+  });
+});

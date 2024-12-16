@@ -8,6 +8,7 @@ export default function displayAllProjectTitles(projects) {
     const projectButton = document.createElement("button");
     projectButton.classList.toggle("project-button");
     projectButton.classList.toggle("project-title");
+    projectButton.classList.toggle("user-created");
     projectButton.type = "button";
     projectButton.textContent = project.title;
 
