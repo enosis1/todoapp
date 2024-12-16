@@ -13,19 +13,19 @@ const taskOne = new Task(
 const taskTwo = new Task(
   "Finsh another project",
   "Default Description",
-  format(new Date(2024, 11, 30), "yyyy-MM-dd"),
+  format(new Date(), "yyyy-MM-dd"),
   "High",
 );
 const taskThree = new Task(
   "Finish third Project",
   "Default Description",
-  format(new Date(2024, 11, 25), "yyyy-MM-dd"),
+  format(new Date(), "yyyy-MM-dd"),
   "High",
 );
 const taskFour = new Task(
   "Finsh fourth project",
   "Default Description",
-  format(new Date(2024, 11, 20), "yyyy-MM-dd"),
+  format(new Date(2024, 11, 30), "yyyy-MM-dd"),
   "High",
 );
 const testProject = new Project("Test Projects List");
