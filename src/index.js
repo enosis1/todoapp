@@ -6,5 +6,6 @@ import projects from "./modules/projects";
 
 // Generates the Main Content DOM nodes.
 displayMainContent();
-console.log(projects);
+
+// Displays the Test Projects which is at position 0 in the projects array
 displayProjectTasks(projects[0]);

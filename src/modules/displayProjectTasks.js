@@ -19,7 +19,7 @@ export default function displayProjectTasks(project) {
     const taskDueDateInput = document.createElement("input");
     taskDueDateInput.classList.toggle("task-due-date-input");
     taskDueDateInput.type = "date";
-    taskDueDateInput.value = task.dueDate;
+    taskDueDateInput.value = `${task.dueDate}`;
     taskDueDateInput.name = `${project.title}-due-date`;
     taskDueDateInput.htmlFor = `${project.title}-due-date`;
     const taskPriorityContainer = document.createElement("div");
