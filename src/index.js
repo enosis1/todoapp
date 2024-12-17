@@ -9,6 +9,7 @@ import displayTodayTasks from "./modules/displayTodayTasks";
 import clearMainDOM from "./modules/clearMainDOM";
 import { format } from "date-fns";
 import handleAddTaskDOM from "./modules/handleAddTaskDOM";
+import clearProjectTitlesContainerDOM from "./modules/clearProjectTitlesContainerDOM";
 
 // Generates the Main Content DOM nodes.
 displayMainContent();
@@ -30,18 +31,16 @@ todaysTasksBtn.addEventListener("click", () => {
   displayTodayTasks(projects);
 });
 
-// Displays all the user created projects
-const userProjectBtns = document.querySelectorAll(".user-created");
-userProjectBtns.forEach((button) => {
-  button.addEventListener("click", () => {
+// Displays all the user created projects task per button title
+const userCreatedProjectsDiv = document.querySelector(".project-titles-container");
+userCreatedProjectsDiv.addEventListener("click", (e) => {
+  if (e.target.classList.contains("user-created")) {
     const thisProjectIndex = projects.findIndex(
-      (project) => project.title === button.textContent,
+      (project) => project.title === e.target.textContent,
     );
-    console.log(thisProjectIndex);
-
     clearMainDOM();
     displayProjectTasks(projects[thisProjectIndex]);
-  });
+  }
 });
 
 // Handles the Add Task Button
@@ -63,11 +62,19 @@ cancelTaskBtn.addEventListener("click", () => {
 });
 
 // Handles the Add Project Button
+const addProjectModalBtn = document.querySelector(".add-project-modal-button");
 const addProjectBtn = document.querySelector(".add-project-button");
 const addProjectModal = document.querySelector(".add-project-modal");
 const cancelProjectBtn = document.querySelector(".cancel-project-button");
-addProjectBtn.addEventListener("click", () => {
+addProjectModalBtn.addEventListener("click", () => {
   addProjectModal.showModal();
+});
+addProjectBtn.addEventListener("click", () => {
+  const newProjectInput = document.querySelector("#new-project-input").value;
+  const newProject = new Project(newProjectInput);
+  projects.push(newProject);
+  clearProjectTitlesContainerDOM();
+  displayAllProjectTitles(projects);
 });
 cancelProjectBtn.addEventListener("click", () => {
   addProjectModal.close();
