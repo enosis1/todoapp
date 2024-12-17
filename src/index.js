@@ -8,6 +8,7 @@ import displayAllProjectTitles from "./modules/displayAllProjectTitles";
 import displayTodayTasks from "./modules/displayTodayTasks";
 import clearMainDOM from "./modules/clearMainDOM";
 import { format } from "date-fns";
+import handleAddTaskDOM from "./modules/handleAddTaskDOM";
 
 // Generates the Main Content DOM nodes.
 displayMainContent();
@@ -54,38 +55,7 @@ addTaskModalBtn.addEventListener("click", () => {
 });
 
 addTaskBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  const newTaskInput = document.querySelector("#new-task-input").value;
-  const newTaskDescription = document.querySelector("#task-description").value;
-  const newTaskDueDate = document.querySelector("#due-date-input").value;
-  const newTaskPriority = document.querySelector("#priority-select").value;
-  const newTask = new Task(
-    newTaskInput,
-    newTaskDescription,
-    format(new Date(newTaskDueDate), "yyyy-MM-dd"),
-    newTaskPriority,
-  );
-
-  const currentProjectTitle = document.querySelector(
-    ".current-project-title",
-  ).textContent;
-
-  if (
-    currentProjectTitle === "" ||
-    currentProjectTitle === "Today's Task" ||
-    currentProjectTitle === "All Task"
-  ) {
-    projects[0].insertTask(newTask);
-    clearMainDOM();
-    displayProjectTasks(projects[0]);
-  } else {
-    const thisProjectIndex = projects.findIndex(
-      (project) => project.title === currentProjectTitle,
-    );
-    projects[thisProjectIndex].insertTask(newTask);
-    clearMainDOM();
-    displayProjectTasks(projects[thisProjectIndex]);
-  }
+  handleAddTaskDOM(e);
   addTaskModal.close();
 });
 cancelTaskBtn.addEventListener("click", () => {
