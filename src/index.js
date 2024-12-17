@@ -1,15 +1,13 @@
-import Task from "./modules/Task";
 import Project from "./modules/Project";
 import displayMainContent from "./modules/displayMainContent";
-import displayProjectTasks from "./modules/displayProjectTasks";
 import projects from "./modules/projects";
 import displayAllTasks from "./modules/displayAllTasks";
 import displayAllProjectTitles from "./modules/displayAllProjectTitles";
 import displayTodayTasks from "./modules/displayTodayTasks";
 import clearMainDOM from "./modules/clearMainDOM";
-import { format } from "date-fns";
 import handleAddTaskDOM from "./modules/handleAddTaskDOM";
 import clearProjectTitlesContainerDOM from "./modules/clearProjectTitlesContainerDOM";
+import handleAddProjectTitleDOM from "./modules/handleAddProjectTitleDOM";
 
 // Generates the Main Content DOM nodes.
 displayMainContent();
@@ -32,15 +30,11 @@ todaysTasksBtn.addEventListener("click", () => {
 });
 
 // Displays all the user created projects task per button title
-const userCreatedProjectsDiv = document.querySelector(".project-titles-container");
+const userCreatedProjectsDiv = document.querySelector(
+  ".project-titles-container",
+);
 userCreatedProjectsDiv.addEventListener("click", (e) => {
-  if (e.target.classList.contains("user-created")) {
-    const thisProjectIndex = projects.findIndex(
-      (project) => project.title === e.target.textContent,
-    );
-    clearMainDOM();
-    displayProjectTasks(projects[thisProjectIndex]);
-  }
+  handleAddProjectTitleDOM(e);
 });
 
 // Handles the Add Task Button
