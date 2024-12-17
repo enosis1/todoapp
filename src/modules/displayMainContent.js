@@ -13,7 +13,7 @@ export default function displayMainContent() {
   currentProjectTasks.classList.toggle("current-project-tasks");
 
   const addTaskButton = document.createElement("button");
-  addTaskButton.classList.toggle("add-task-button");
+  addTaskButton.classList.toggle("add-task-modal-button");
   addTaskButton.textContent = "Add New Task";
 
   currentProjectContainer.appendChild(currentProjectTitle);
