@@ -1,4 +1,3 @@
-import { format } from "date-fns";
 import Task from "./Task";
 import clearMainDOM from "./clearMainDOM";
 import displayProjectTasks from "./displayProjectTasks";
@@ -10,12 +9,14 @@ export default function handleAddTaskDOM(e) {
   const newTaskDescription = document.querySelector("#task-description").value;
   const newTaskDueDate = document.querySelector("#due-date-input").value;
   const newTaskPriority = document.querySelector("#priority-select").value;
+  console.log(newTaskDueDate);
   const newTask = new Task(
     newTaskInput,
     newTaskDescription,
-    format(new Date(newTaskDueDate), "yyyy-MM-dd"),
+    newTaskDueDate,
     newTaskPriority,
   );
+  console.log(newTask);
 
   const currentProjectTitle = document.querySelector(
     ".current-project-title",
@@ -23,8 +24,8 @@ export default function handleAddTaskDOM(e) {
 
   if (
     currentProjectTitle === "" ||
-    currentProjectTitle === "Today's Task" ||
-    currentProjectTitle === "All Task"
+    currentProjectTitle === "Today's Tasks" ||
+    currentProjectTitle === "All Tasks"
   ) {
     projects[0].insertTask(newTask);
     clearMainDOM();
