@@ -1,4 +1,5 @@
 import Task from "./Task";
+import addToLocalStorage from "./addToLocalStorage";
 import clearMainDOM from "./clearMainDOM";
 import displayProjectTasks from "./displayProjectTasks";
 import projects from "./projects";
@@ -30,6 +31,7 @@ export default function handleAddTaskDOM(e) {
     projects[0].insertTask(newTask);
     clearMainDOM();
     displayProjectTasks(projects[0]);
+    addToLocalStorage(projects);
   } else {
     const thisProjectIndex = projects.findIndex(
       (project) => project.title === currentProjectTitle,
@@ -37,5 +39,6 @@ export default function handleAddTaskDOM(e) {
     projects[thisProjectIndex].insertTask(newTask);
     clearMainDOM();
     displayProjectTasks(projects[thisProjectIndex]);
+    addToLocalStorage(projects);
   }
 }

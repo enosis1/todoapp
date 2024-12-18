@@ -9,6 +9,7 @@ import handleAddTaskDOM from "./modules/handleAddTaskDOM";
 import clearProjectTitlesContainerDOM from "./modules/clearProjectTitlesContainerDOM";
 import handleAddProjectTitleDOM from "./modules/handleAddProjectTitleDOM";
 import "./css/styles.css";
+import addToLocalStorage from "./modules/addToLocalStorage";
 
 // Generates the Main Content DOM nodes.
 displayMainContent();
@@ -70,6 +71,7 @@ addProjectBtn.addEventListener("click", () => {
   projects.push(newProject);
   clearProjectTitlesContainerDOM();
   displayAllProjectTitles(projects);
+  addToLocalStorage(projects)
 });
 cancelProjectBtn.addEventListener("click", () => {
   addProjectModal.close();

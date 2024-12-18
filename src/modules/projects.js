@@ -2,7 +2,15 @@ import { format } from "date-fns";
 import Task from "./Task";
 import Project from "./Project";
 
-let projects = [];
+function getProjects() {
+  if (localStorage.getItem("projects") === null) {
+    let projects = [];
+    return projects;
+  }
+  let projects = JSON.parse(localStorage.getItem("projects"));
+  return projects;
+}
+let projects = getProjects();
 
 const taskOne = new Task(
   "Finish the Project",
