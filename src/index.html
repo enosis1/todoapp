@@ -8,51 +8,53 @@
 </head>
 
 <body>
-  <div class="header">
-    <p>Todo List</p>
-  </div>
-  <div class="sidebar">
-    <button class="project-button all-tasks-button">All Tasks</button>
-    <button class="project-button today-task-button">Today's Tasks</button>
-    <div class="project-titles-container"></div>
-    <button class="add-project-modal-button">Add New Project</button>
-  </div>
-  <div id="content"></div>
-  <div class="footer">
-    <p>Copyright enosis1 @ Github</p>
-  </div>
-  <dialog class="add-project-modal">
-    <form method="dialog">
-      <input type="text" id="new-project-input" placeholder="What's your new project?" required />
-      <div class="project-modal-buttons">
-        <button class="add-project-button button" type="submit">
-          Create Project
-        </button>
-        <button class="cancel-project-button button" type="button">
-          Cancel
-        </button>
-      </div>
-    </form>
-  </dialog>
-  <dialog class="add-task-modal">
-    <form method="dialog">
-      <input type="text" id="new-task-input" placeholder="What do you need to do?" required />
-      <div class="optional-task-container">
-        <div class="description-container">
-          <label for="task-description">Description</label>
-          <input type="text" name="description" id="task-description" />
+  <div class="grid-container">
+    <div class="header">
+      <p>Todo List</p>
+    </div>
+    <div class="sidebar">
+      <button class="project-button all-tasks-button">All Tasks</button>
+      <button class="project-button today-task-button">Today's Tasks</button>
+      <div class="project-titles-container"></div>
+      <button class="add-project-modal-button">Add New Project</button>
+    </div>
+    <div id="content"></div>
+    <div class="footer">
+      <p>Copyright enosis1 @ Github</p>
+    </div>
+    <dialog class="add-project-modal">
+      <form method="dialog">
+        <input type="text" id="new-project-input" placeholder="What's your new project?" required />
+        <div class="project-modal-buttons">
+          <button class="add-project-button button" type="submit">
+            Create Project
+          </button>
+          <button class="cancel-project-button button" type="button">
+            Cancel
+          </button>
         </div>
-        <div class="due-date-container">
-          <label for="due-date-input">Due:</label>
-          <input type="date" id="due-date-input" required />
-        </div>
-        <div class="priority-container">
-          <label for="priority-select">Priority:</label>
-          <select name="priority" id="priority-select" required>
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-          </select>
+      </form>
+    </dialog>
+    <dialog class="add-task-modal">
+      <form method="dialog">
+        <input type="text" id="new-task-input" placeholder="What do you need to do?" required />
+        <div class="optional-task-container">
+          <div class="description-container">
+            <label for="task-description">Description</label>
+            <input type="text" name="description" id="task-description" />
+          </div>
+          <div class="due-date-container">
+            <label for="due-date-input">Due:</label>
+            <input type="date" id="due-date-input" required />
+          </div>
+          <div class="priority-container">
+            <label for="priority-select">Priority:</label>
+            <select name="priority" id="priority-select" required>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
         </div>
         <div class="task-modal-buttons">
           <button class="add-task-button button" type="submit">
@@ -62,9 +64,9 @@
             Cancel
           </button>
         </div>
-      </div>
-    </form>
-  </dialog>
+      </form>
+    </dialog>
+  </div>
 </body>
 
 </html>

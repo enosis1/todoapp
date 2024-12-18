@@ -8,6 +8,7 @@ import clearMainDOM from "./modules/clearMainDOM";
 import handleAddTaskDOM from "./modules/handleAddTaskDOM";
 import clearProjectTitlesContainerDOM from "./modules/clearProjectTitlesContainerDOM";
 import handleAddProjectTitleDOM from "./modules/handleAddProjectTitleDOM";
+import "./css/styles.css";
 
 // Generates the Main Content DOM nodes.
 displayMainContent();
